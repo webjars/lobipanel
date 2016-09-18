@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>lobipanel</artifactId>
-    <version>0.6-SNAPSHOT</version>
+    <version>0.6</version>
     <name>lobipanel</name>
     <description>WebJar for lobipanel</description>
     <url>http://webjars.org</url>
@@ -49,7 +49,7 @@
         <url>http://github.com/webjars/lobipanel</url>
         <connection>scm:git:https://github.com/webjars/lobipanel.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/lobipanel.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>lobipanel-0.6</tag>
     </scm>
 
     <build>
@@ -78,13 +78,13 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="download archive"/>
-                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip"/>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="download archive" />
+                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip" />
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/${project.artifactId}-${version.unsnapshot}/dist"/>
+                                    <fileset dir="${project.build.directory}/${project.artifactId}-${version.unsnapshot}/dist" />
                                 </move>
                             </target>
                         </configuration>
